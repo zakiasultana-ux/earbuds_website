@@ -1,0 +1,193 @@
+@use '../abstracts';
+
+.head {
+    background: abstracts.$white;
+    box-shadow: abstracts.$shadow;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    @media screen and (min-width: abstracts.$tablet) {
+        padding: 1rem 1.5rem;
+    }
+
+    @media screen and (min-width: abstracts.$desktop) {
+        padding: 1rem 2rem;
+    }
+}
+
+.logo {
+    flex-shrink: 0;
+
+    a {
+        display: block;
+        line-height: 0;
+    }
+
+    img {
+        height: 32px;
+        width: auto;
+        transition: abstracts.$transition;
+
+        @media screen and (min-width: abstracts.$tablet) {
+            height: 36px;
+        }
+
+        @media screen and (min-width: abstracts.$desktop) {
+            height: 40px;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.main-nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    nav {
+        ul {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background: abstracts.$white;
+            flex-direction: column;
+            width: 220px;
+            padding: 1rem;
+            box-shadow: abstracts.$shadow;
+            border-radius: 8px;
+            list-style: none;
+
+            &.active {
+                display: flex;
+            }
+
+            @media screen and (min-width: abstracts.$tablet) {
+                display: flex !important;
+                position: static;
+                flex-direction: row;
+                width: auto;
+                padding: 0;
+                box-shadow: none;
+                gap: 1.5rem;
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            @media screen and (min-width: abstracts.$desktop) {
+                gap: 2rem;
+            }
+
+            li {
+                width: 100%;
+                border-bottom: 1px solid #e5e7eb;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                @media screen and (min-width: abstracts.$tablet) {
+                    width: auto;
+                    border-bottom: none;
+                }
+
+                a {
+                    color: abstracts.$text-color;
+                    text-decoration: none;
+                    font-weight: 500;
+                    font-size: 0.95rem;
+                    transition: abstracts.$transition;
+                    position: relative;
+                    padding: 0.75rem 0;
+                    display: block;
+
+                    @media screen and (min-width: abstracts.$tablet) {
+                        padding: 0.5rem 0;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background: abstracts.$primary-color;
+                        transition: abstracts.$transition;
+                        display: none;
+
+                        @media screen and (min-width: abstracts.$tablet) {
+                            display: block;
+                        }
+                    }
+
+                    &:hover {
+                        color: abstracts.$primary-color;
+
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+
+                    &.active {
+                        color: abstracts.$primary-color;
+
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hanburger {
+    display: block;
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: abstracts.$transition;
+
+    @media screen and (min-width: abstracts.$tablet) {
+        display: none;
+    }
+
+    svg {
+        display: block;
+        width: 32px;
+        height: 32px;
+        color: abstracts.$text-color;
+        transition: abstracts.$transition;
+
+        line {
+            transition: abstracts.$transition;
+            transform-origin: center;
+        }
+    }
+
+    &:hover svg {
+        color: abstracts.$primary-color;
+    }
+
+    &.active {
+        svg {
+            line:nth-child(1) {
+                transform: translateY(6px) rotate(45deg);
+            }
+
+            line:nth-child(2) {
+                opacity: 0;
+                transform: translateX(10px);
+            }
+
+            line:nth-child(3) {
+                transform: translateY(-6px) rotate(-45deg);
+            }
+        }
+    }
+}
