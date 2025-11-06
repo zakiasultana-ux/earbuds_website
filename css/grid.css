@@ -1,0 +1,206 @@
+/*
+Style Name: Site Build 
+Description: Class File
+Author: Zakia Sultana. 
+Version: 1.0
+Tags: Let's Build Something!
+*/
+
+/* ___________________________________________
+
+       CSS Guide
+___________________________________________ */
+
+/* 01. CSS Grid
+   01-a. CSS Variables
+   01-b. Mobile
+   01-c. Mobile Landscape
+   01-d. Tablet
+   01-e. Small Desktop & Up
+
+/* _____________________________________
+
+   01-a. Variables
+   _____________________________________ */
+
+   :root {
+      --main-padding: 0.9375em;
+      --gap-size: 0.5em;
+      --ml-gap-size: 1em;
+   }
+
+/* _____________________________________
+
+   01-b. Mobile
+   _____________________________________ */
+
+   html {
+      box-sizing: border-box;/* This makes width and height include padding and border by default */
+   }
+
+   *, *::before, *::after {
+      box-sizing: inherit;
+   }
+
+   .hidden{
+      display: none;
+   }
+
+   /*------------ start mobile ------------*/
+
+   .site{ max-width: 48em;}
+
+   .mobile{display: block;}
+   .tablet{display: none;}
+   .desktop{display: none;}
+
+   /*------------ Grid Items mobile ------------*/
+    
+   .head, .main > *, .foot {
+      display: grid;
+      grid-template-columns: 1fr repeat(2, minmax(0, 24em)) 1fr;/* 4 equal columns *//* repeat(2, minmax(0, 24em)) creates 2 columns that are at least 0 and at most 24em wide */
+      margin-left: var(--gap-size);
+      margin-right: var(--gap-size);
+   }
+
+   .logo{ grid-column: 1 / span 1; }/* start at column line 1 and span 1 column */
+   nav{ grid-column: 3 / span 1; }/* start at column line 3 and span 1 column */
+
+   .one-item, .two-items, .three-items, .four-items {
+      margin-bottom: 1em;
+      display: grid;
+      justify-items: stretch;
+      grid-column-gap: var(--gap-size);
+      grid-column: 2 / span 2;
+   }
+
+   .full{ grid-column: 1 / -1; }/* start at column line 1 and span to the last column line */
+
+   .one-item{ grid-template-columns: 1fr; }/* 1 equal column */
+   .two-items{ grid-template-columns: repeat(2, 1fr); }/* 2 equal columns */
+   .three-items{ grid-template-columns: repeat(3, 1fr); }/* 3 equal columns */
+   .four-items{ grid-template-columns: repeat(4, 1fr); }/* 4 equal columns */
+
+     
+   /* _____________________________________
+
+   01-c. Mobile Landscape
+   _____________________________________ */
+
+   @media screen and (min-width: 48em) {/* for landscape on the mobile screen *//*48em is 768px*/
+
+      .site{ max-width: 63.99em;}
+
+      .mobile{display: block;}
+      .tablet{display: none;}
+      .desktop{display: none;}
+      
+      .head, .main > *, .foot {
+         display: grid;
+         grid-template-columns: 1fr repeat(4, minmax(auto, 15.99em)) 1fr;/* 6 equal columns *//* repeat(4, minmax(auto, 15.99em)) creates 4 columns that are at least 0 and at most 15.99em wide */
+      }
+      
+      .logo{ grid-column: 1 / span 1; }/* start at column line 1 and span 1 column */
+      nav{ grid-column: 2 / span 5; }/* start at column line 2 and span 5 columns */
+
+      .sm-one-item, .sm-two-items, .sm-three-items, .sm-four-items, .sm-one-third, .sm-two-third, .sm-half-left, .sm-half-right {
+         display: grid;
+         justify-items: stretch;
+         grid-column-gap: var(--gap-size);
+         grid-column: 2 / span 4;
+      }
+      
+      .sm-one-item{ grid-template-columns: 1fr; }/* 1 equal column */
+      .sm-two-items{ grid-template-columns: repeat(2, 1fr); }/* 2 equal columns */
+      .sm-three-items{ grid-template-columns: repeat(3, 1fr); }/* 3 equal columns */
+      .sm-four-items{ grid-template-columns: repeat(4, 1fr); }/* 4 equal columns */
+      .sm-one-third{ grid-template-columns: 1fr 3fr; }/* 1/3 and 2/3 columns */
+      .sm-two-third{ grid-template-columns: 3fr 1fr; }/* 2/3 and 1/3 columns */
+      .sm-half-left{ grid-template-columns: 2fr 1fr 1fr; }/* 1/4 and 1/4 and 1/2 columns */
+      .sm-half-right{ grid-template-columns: 1fr 1fr 2fr; }/* 1/2 and 1/4 and 1/4 columns */
+
+   }
+   
+   /* _____________________________________
+
+   01-d. Tablet
+   _____________________________________ */
+
+   @media screen and (min-width: 64em) { /*64em is 1024px*/
+
+      .site{ max-width: 119.99em;}
+
+      .mobile{display: none;}
+      .tablet{display: block;}
+      .desktop{display: none;}
+      
+      .head, .main > *, .foot {
+         display: grid;
+         grid-template-columns: 1fr repeat(4, minmax(auto, 15.99em)) 1fr;/* 8 equal columns *//* repeat(4, minmax(auto, 15.99em)) creates 4 columns that are at least 0 and at most 15.99em wide */
+      }
+
+      .logo{ grid-column: 1 / span 1; }/* start at column line 1 and span 1 column */
+      nav{ grid-column: 2 / span 5; }/* start at column line 2 and span 5 columns */
+
+      .md-one-item, .md-two-items, .md-three-items, .md-four-items, .md-one-third, .md-two-third, .md-half-left, .md-half-right {
+         display: grid;
+         justify-items: stretch;
+         grid-column-gap: var(--ml-gap-size);
+         grid-column: 2 / span 4; /* span 4 columns or the full width */
+      }
+
+      .md-one-item{ grid-template-columns: 1fr; }/* 1 equal column */
+      .md-two-items{ grid-template-columns: repeat(2, 1fr); }/* 2 equal columns */
+      .md-three-items{ grid-template-columns: repeat(3, 1fr); }/* 3 equal columns */
+      .md-four-items{ grid-template-columns: repeat(4, 1fr); }/* 4 equal columns */
+      .md-five-items{ grid-template-columns: repeat(5, 1fr); }/* 5 equal columns */
+      .md-one-third{ grid-template-columns: 1fr 3fr; }/* 1/3 and 2/3 columns */
+      .md-two-third{ grid-template-columns: 3fr 1fr; }/* 2/3 and 1/3 columns */
+      .md-half-left{ grid-template-columns: 2fr 1fr 1fr; }/* 1/4 and 1/4 and 1/2 columns */
+      .md-half-right{ grid-template-columns: 1fr 1fr 2fr; }/* 1/2 and 1/4 and 1/4 columns */
+      
+   }
+
+   /* _____________________________________
+
+   01-e. Small Desktop & Up
+   _____________________________________ */
+
+   @media screen and (min-width: 120em) { /*120em is 1920px*/
+
+      .site{ max-width: none;}
+
+      .mobile{display: none;}
+      .tablet{display: none;}
+      .desktop{display: block;}
+      
+      .head, .main > *, .foot {
+         display: grid;
+         grid-template-columns: 1fr repeat(4, minmax(auto, 30em)) 1fr;/* 10 equal columns *//* repeat(4, minmax(auto, 30em)) creates 4 columns that are at least 0 and at most 30em wide */
+      }
+
+      .logo{ grid-column: 1 / span 1; }/* start at column line 1 and span 1 column */
+      nav{ grid-column: 2 / span 5; }/* start at column line 2 and span 5 columns */
+
+      .lg-one-item, .lg-two-items, .lg-three-items, .lg-four-items, .lg-one-third, .lg-two-third, .lg-half-left, .lg-half-right {
+         display: grid;
+         justify-items: stretch;
+         grid-column: 2 / span 4; /* span 4 columns or the full width */
+      }
+
+      .lg-one-item{ grid-template-columns: 1fr; }/* 1 equal column */
+      .lg-two-items{ grid-template-columns: repeat(2, 1fr); }/* 2 equal columns */
+      .lg-three-items{ grid-template-columns: repeat(3, 1fr); }/* 3 equal columns */
+      .lg-four-items{ grid-template-columns: repeat(4, 1fr); }/* 4 equal columns */
+      .lg-five-items{ grid-template-columns: repeat(5, 1fr); }/* 5 equal columns */
+      .lg-six-items{ grid-template-columns: repeat(6, 1fr); }/* 6 equal columns */
+      .lg-one-third{ grid-template-columns: 1fr 3fr; }/* 1/3 and 2/3 columns */
+      .lg-two-third{ grid-template-columns: 3fr 1fr; }/* 2/3 and 1/3 columns */
+      .lg-half-left{ grid-template-columns: 2fr 1fr 1fr; }/* 1/4 and 1/4 and 1/2 columns */
+      .lg-half-right{ grid-template-columns: 1fr 1fr 2fr; }/* 1/2 and 1/4 and 1/4 columns */
+      
+   }
+
+   /* _____________________________________
+
+       End of CSS Grid Layout   */
