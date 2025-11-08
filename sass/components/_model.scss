@@ -1,0 +1,40 @@
+@use '../abstracts';
+
+#model-3d {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#model {
+  width: 100%;
+  height: 75%;
+}
+
+.HotspotAnnotation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: abstracts.$tablet) {
+  #model-3d {
+    height: 80vh;
+    min-height: 600px;
+  }
+}
+
+@media screen and (min-width: abstracts.$desktop) {
+  #model-3d {
+    height: 85vh;
+    min-height: 700px;
+  }
+}
+
+@media screen and (min-width: abstracts.$large) {
+  #model-3d {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}

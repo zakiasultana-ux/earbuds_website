@@ -10,26 +10,26 @@
     const infoboxes = [
         {
             title: "Charging Points",
-            text: "Noise-cancelling microphones and a rear copper shield are optimally placed to quickly detect outside noises, working together to counter noise before it disturbs your experience.",
-            image: "images/ar_icon.png",
+            text: "Power up your earbuds anytime — quick, seamless charging points just for you.",
+            image: "images/charging.png",
             alt: "air icon"
         },
         {
             title: "Earphone Rubber",
-            text: "Three pairs of ultra comfortable silicone tips are included. The tips create an acoustic seal that blocks outside audio and secures the earbuds in place.",
-            image: "images/ar_icon.png",
+            text: "Designed for comfort and stability — our earphone rubbers adapt perfectly to your ears.",
+            image: "images/wireless.png",
             alt: "air icon"
         },
         {
             title: "Play/Pause",
-            text: "360 Audio places sound all around you, while Dolby Head Tracking™ technology delivers an incredible three-dimensional listening experience.",
-            image: "images/ar_icon.png",
+            text: "Just tap once to play or pause your music — quick, easy, and effortless.",
+            image: "images/P_P.png",
             alt: "air icon"
         },
         {
             title: "Speaker",
-            text: "Charge your earbuds in 30 minutes or less with our hyper charging technology.",
-            image: "images/ar_icon.png",
+            text: "Big sound, small size — these speakers make every beat hit just right.",
+            image: "images/speaker.png",
             alt: "air icon"
         }
     ];
@@ -85,18 +85,23 @@
     function loadinfo() {
         infoboxes.forEach((infobox, index) => {
             console.log(index + 1);
+            
             let selected = document.querySelector(`#hotspot-${index + 1}`);
             console.log(selected);
 
+            const containerDiv = document.createElement('div');
             const titleelement = document.createElement('h2');
-            titleelement.textContent = infobox.title;
             const textelement = document.createElement('p');
-            textelement.textContent = infobox.text;
             const imageelement = document.createElement('img');
+
+            titleelement.textContent = infobox.title;
+            textelement.textContent = infobox.text;
             imageelement.src = infobox.image;
             imageelement.alt = infobox.alt;
-            selected.appendChild(imageelement);
-            selected.appendChild(titleelement);
+
+            containerDiv.appendChild(imageelement);
+            containerDiv.appendChild(titleelement);
+            selected.appendChild(containerDiv);
             selected.appendChild(textelement);
         });
     }

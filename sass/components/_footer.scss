@@ -1,0 +1,31 @@
+@use '../abstracts';
+
+.foot {
+    background-color: abstracts.$white;
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.full {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.foot p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+@media screen and (min-width: abstracts.$tablet) {
+    .foot {
+        padding: 1rem * 1.5 0;
+    }
+
+    .foot p {
+        font-size: 1rem;
+    }
+}
