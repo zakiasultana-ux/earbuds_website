@@ -8,6 +8,12 @@
 
 a {
     text-decoration: none;
+    color: abstracts.$text-color;
+}
+body{
+  overflow-x: hidden;
+  font-family: Futura, Helvetica Neue, sans-serif;
+  color: abstracts.$text-color;
 }
 
 html {
