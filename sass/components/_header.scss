@@ -1,19 +1,20 @@
 @use '../abstracts';
 
-.head {
+header {
     background: abstracts.$white;
     box-shadow: abstracts.$shadow;
-    padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 1000;
+    height: auto;
 
     @media screen and (min-width: abstracts.$tablet) {
         padding: 1rem 1.5rem;
     }
 
     @media screen and (min-width: abstracts.$desktop) {
-        padding: 1rem 2rem;
+        // padding: 1rem 2rem;
+        padding: 0;
     }
 }
 
@@ -26,8 +27,9 @@
     }
 
     img {
-        height: 32px;
+        height: 50px;
         width: auto;
+        margin-left: 50px;
         transition: abstracts.$transition;
 
         @media screen and (min-width: abstracts.$tablet) {
@@ -35,7 +37,7 @@
         }
 
         @media screen and (min-width: abstracts.$desktop) {
-            height: 40px;
+            height: 85px;
         }
 
         &:hover {
@@ -53,7 +55,7 @@
         ul {
             display: none;
             position: absolute;
-            top: 60px;
+            top: 56px;
             right: 0;
             background: abstracts.$white;
             flex-direction: column;
@@ -98,8 +100,8 @@
 
                 a {
                     text-decoration: none;
-                    font-weight: 500;
-                    font-size: 0.95rem;
+                    font-weight: 600;
+                    font-size: 1.2rem;
                     transition: abstracts.$transition;
                     position: relative;
                     padding: 0.75rem 0;
@@ -151,6 +153,7 @@
     cursor: pointer;
     padding: 0.25rem;
     transition: abstracts.$transition;
+    margin-left: 70%;
 
     @media screen and (min-width: abstracts.$tablet) {
         display: none;

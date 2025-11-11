@@ -45,3 +45,10 @@
       justify-content: center;
 }
 
+@mixin gradient-bg {
+  background: linear-gradient(135deg, abstracts.$primary-color 0%, abstracts.$text-light 100%);
+}
+
+@mixin text-shadow {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
