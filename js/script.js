@@ -1,6 +1,10 @@
 (() => {
   console.log("welcome to earbud js");
 
+  // pluging 
+
+  gsap.registerPlugin(ScrollTrigger);
+
   // variable
 
   const hotspots = document.querySelectorAll(".Hotspot");
@@ -79,6 +83,8 @@
   function resizeScreen() {
     console.log("resize screen function is called");
 
+    // textinfodisplay();
+    
     if (isMobile) {
       hamburger.classList.remove('active');
       navMenu.classList.remove('active');
@@ -87,7 +93,8 @@
 
       document.querySelectorAll('.info-container').forEach(el => el.remove());
       
-    } else {
+    } 
+    else {
       textinfodisplay();
     }
 
@@ -95,10 +102,10 @@
     hotspots.forEach(hotspot => {
       if (isMobile) {
         hotspot.classList.remove('hidden');
-        console.log("hidden is removing ");
+        console.log("hidden is removing to the hotspots");
       } else {
         hotspot.classList.add('hidden');
-        console.log("hidden is added ");
+        console.log("hidden is added to the hotspots");
       }
     });
   }
@@ -141,42 +148,35 @@
 
     console.log("mobile view text is called");
 
+    textInfo.classList.remove('hidden');
+
     textInfo.innerHTML = '';
 
     infoboxes.forEach((infobox, index) => {
       
       const containerDiv = document.createElement('div');
       const childDiv = document.createElement('div');
+      const childDiv2 = document.createElement('div');
       const titleElement = document.createElement('h2');
       const textElement = document.createElement('p');
       const imageElement = document.createElement('img');
 
       containerDiv.classList.add('info-wrapper');
-      childDiv.classList.add('info-container');
+      childDiv2.classList.add('info-container');
+      imageElement.classList.add('info-image');
       containerDiv.id = `hotspot-${index + 1}`;
 
-      // ensure elements are visible (remove any 'hidden' class if present)
       containerDiv.classList.remove('hidden');
       childDiv.classList.remove('hidden');
-
-      // basic layout so each info block stacks nicely inside the scrollable area
-      containerDiv.style.display = 'block';
-      containerDiv.style.width = '100%';
-      containerDiv.style.marginBottom = '1rem';
-      childDiv.style.display = 'flex';
-      childDiv.style.flexDirection = 'column';
-      childDiv.style.gap = '0.5rem';
       
       titleElement.textContent = infobox.title;
       textElement.textContent = infobox.text;
       imageElement.src = infobox.image;
       imageElement.alt = infobox.alt;
-      imageElement.style.maxWidth = '100%';
-      imageElement.style.height = 'auto';
-      imageElement.style.display = 'block';
 
-      childDiv.appendChild(imageElement);
-      childDiv.appendChild(titleElement);
+      childDiv2.appendChild(imageElement);
+      childDiv2.appendChild(titleElement);
+      childDiv.appendChild(childDiv2);
       childDiv.appendChild(textElement);
 
       containerDiv.appendChild(childDiv);
