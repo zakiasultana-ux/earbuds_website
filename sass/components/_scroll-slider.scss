@@ -1,0 +1,145 @@
+@use '../abstracts';
+
+#exploded-view {
+    padding: 4rem 2rem;
+  
+  h2 {
+    color: abstracts.$primary-color;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    
+    @media screen and (min-width: abstracts.$tablet) {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    @media screen and (min-width: abstracts.$desktop) {
+      font-size: 4.5rem;
+      margin-bottom: 3rem;
+    }
+  }
+  
+ #explode-view {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+    @media screen and (min-width: abstracts.$tablet) {
+        border-radius: 12px;
+    }
+  }
+}
+
+#xray-section {
+  padding: 0.2rem 2rem;
+
+  h2 {
+    color: abstracts.$primary-color;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @media screen and (min-width: abstracts.$tablet) {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    @media screen and (min-width: abstracts.$desktop) {
+      font-size: 4.5rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  #xray {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    aspect-ratio: 16/10;
+    background-image: url('../../images/earbuds-final.png');
+    background-size: cover;
+    border-radius: 15px;
+
+    @media screen and (min-width: abstracts.$tablet) {
+        border-radius: 20px;
+    }
+  }
+
+  #divisor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 16/10;
+    background-image: url('../../images/earbud_x-ray.png');
+    background-size: cover;
+    width: 50%;
+    height: 100%;
+    border-radius: 15px 0px 0px 15px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 6px;
+      height: 100%;
+      background-color: abstracts.$white;
+    }
+
+    &::before {
+      content: '⟷';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: abstracts.$primary-color;
+      background-color: abstracts.$white;
+      padding: 2px 4px;
+      border-radius: 4px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @media screen and (min-width: abstracts.$tablet) {
+        border-radius: 20px 0px 0px 20px;
+    }
+  }
+
+   #slider {
+    -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      cursor: ew-resize;
+      z-index: 10;
+
+      &::-webkit-slider-thumb {
+      width: 40px;
+      height: 500px;
+      cursor: ew-resize;
+    }
+
+    &::-moz-range-thumb {
+      width: 40px;
+      height: 500px;
+      cursor: ew-resize;
+      background-color: abstracts.$white;
+    }
+
+    @media screen and (min-width: abstracts.$tablet) {
+        border-radius: 20px;
+    }
+  }
+}

@@ -18,7 +18,7 @@ model-viewer {
 }
 
 .Hotspot {
-  visibility: visible;
+  visibility: hidden;
   background: url(../images/hotspot.svg) center no-repeat;
   background-size: contain;
   border: 0;
@@ -49,13 +49,20 @@ model-viewer {
     width: 28px;
     height: 28px;
 
-    @media (min-width: 1024px) {
+    @media screen and (min-width: abstracts.$desktop)  {
       border: 4px solid rgb(0, 128, 200);
       width: 32px;
       height: 32px;
     }
   }
+
 }
+
+@media screen and (min-width: abstracts.$tablet) {
+    .Hotspot {
+      visibility: visible;
+    }
+  }
 
 @keyframes pulse {
   0%, 100% {

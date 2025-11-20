@@ -1,3 +1,5 @@
+@use 'variables' as abstracts;
+
 //Mixins
 @mixin tablet {
   @media screen and (min-width: #{$tablet}) {
@@ -52,3 +54,4 @@
 @mixin text-shadow {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
+
