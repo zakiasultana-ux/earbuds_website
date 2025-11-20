@@ -1,7 +1,7 @@
 @use '../abstracts';
 
 #exploded-view {
-    padding: 4rem 2rem;
+    margin-bottom: 0;
   
   h2 {
     color: abstracts.$primary-color;
@@ -21,6 +21,12 @@
       font-size: 4.5rem;
       margin-bottom: 3rem;
     }
+
+    @media screen and (min-width: abstracts.$tablet) {
+      #exploded-view {
+        padding: 2rem 4rem;
+      }
+    }
   }
   
  #explode-view {
@@ -33,6 +39,8 @@
     }
   }
 }
+
+// slider code 
 
 #xray-section {
   padding: 0.2rem 2rem;
