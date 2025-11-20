@@ -5,11 +5,27 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  
+  #model-title {
+    text-align: center;
+    color: abstracts.$primary-color;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 20px;
+
+    @media screen and (min-width: abstracts.$tablet) {
+      font-size: 4rem;
+    }
+
+    @media screen and (min-width: abstracts.$desktop) {
+      font-size: 6rem;
+    }
+  }
 }
 
 #model {
   width: 100%;
-  height: 75%;
+  height: 100%;
 }
 
 .HotspotAnnotation {

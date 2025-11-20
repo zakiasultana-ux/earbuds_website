@@ -56,38 +56,57 @@
         <button class="cta-button">Shop Now</button>
       </div>
     </section>
-    <section id="model-3d" class="full">
-      <h2 class="hidden">model viewer</h2>
-      <model-viewer id="model" src="model/final_earbud.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
-        tone-mapping="neutral" poster="images/poster.webp" shadow-intensity="1">
-        <button class="Hotspot" slot="hotspot-1"
-          data-position="2.7485287679454022m 3.9326567888734516m -1.2086738564379884m"
-          data-normal="0.13637197279432753m 0.9849321875212139m 0.10635445933697224m"
-          data-visibility-attribute="visible">
-          <div class="HotspotAnnotation" id="hotspot-1"></div>
-        </button>
-        <button class="Hotspot" slot="hotspot-2"
-          data-position="2.7858450960273835m 4.380731515232011m -1.5206194541250686m"
-          data-normal="-0.08805439819747375m 0.6487970485896569m 0.7558497289140423m"
-          data-visibility-attribute="visible">
-          <div class="HotspotAnnotation" id="hotspot-2"></div>
-        </button>
-        <button class="Hotspot" slot="hotspot-3"
-          data-position="2.642879107773933m 3.428602792490828m -1.3870402560361912m"
-          data-normal="-0.14218386625432314m -0.9877146442964999m -0.0648346328686427m"
-          data-visibility-attribute="visible">
-          <div class="HotspotAnnotation" id="hotspot-3"></div>
-        </button>
-        <button class="Hotspot" slot="hotspot-4"
-          data-position="2.903909456115592m 3.925193635486453m -1.3424045743219741m"
-          data-normal="0.17368447589185357m 0.9753288687559567m 0.1362618824374515m"
-          data-visibility-attribute="visible">
-          <div class="HotspotAnnotation" id="hotspot-4"></div>
-        </button>
-      </model-viewer>
+    <section>
+      <div class="full" id="model-3d">
+        <h2 id="model-title">Revolutionary Features</h2>
+        <model-viewer id="model" src="model/final_earbud.glb" ar ar-modes="webxr scene-viewer quick-look"
+          camera-controls tone-mapping="neutral" poster="images/poster.webp" shadow-intensity="1">
+          <button class="Hotspot" slot="hotspot-1"
+            data-position="2.7485287679454022m 3.9326567888734516m -1.2086738564379884m"
+            data-normal="0.13637197279432753m 0.9849321875212139m 0.10635445933697224m"
+            data-visibility-attribute="visible">
+            <div class="HotspotAnnotation" id="hotspot-1"></div>
+          </button>
+          <button class="Hotspot" slot="hotspot-2"
+            data-position="2.7858450960273835m 4.380731515232011m -1.5206194541250686m"
+            data-normal="-0.08805439819747375m 0.6487970485896569m 0.7558497289140423m"
+            data-visibility-attribute="visible">
+            <div class="HotspotAnnotation" id="hotspot-2"></div>
+          </button>
+          <button class="Hotspot" slot="hotspot-3"
+            data-position="2.642879107773933m 3.428602792490828m -1.3870402560361912m"
+            data-normal="-0.14218386625432314m -0.9877146442964999m -0.0648346328686427m"
+            data-visibility-attribute="visible">
+            <div class="HotspotAnnotation" id="hotspot-3"></div>
+          </button>
+          <button class="Hotspot" slot="hotspot-4"
+            data-position="2.903909456115592m 3.925193635486453m -1.3424045743219741m"
+            data-normal="0.17368447589185357m 0.9753288687559567m 0.1362618824374515m"
+            data-visibility-attribute="visible">
+            <div class="HotspotAnnotation" id="hotspot-4"></div>
+          </button>
+        </model-viewer>
+      </div>
+      <div class="full">
+        <div class="hidden" id="text-info"></div>
+      </div>
     </section>
-    <section id="model-text">
-      <div class="full hidden" id="text-info"></div>
+    <section>
+      <div class="full" id="exploded-view">
+        <h2>Design & Build</h2>
+        <div>
+          <canvas id="explode-view"></canvas>
+        </div>
+      </div>
+    </section>
+    <section id="xray-section">
+      <div class="full">
+        <h2>Made for Every Moment</h2>
+        <div id="xray">
+          <div id="divisor"></div>
+          <input type="range" min="0" max="100" value="50" id="slider">
+        </div>
+      </div>
     </section>
   </main>
 

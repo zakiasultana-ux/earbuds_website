@@ -1,15 +1,24 @@
 @use "../abstracts";
 
 main {
-  height: 2000px;
+  // height: 2000px;
   margin-top: 0.15rem;
+
+  section{
+    margin: 0 !important;
+  }
 
   #model-3d {
     display: block !important;
   }
 
   #model-text{
-    margin-top: -200px;
+    margin-top: -100px;
+    visibility: visible;
+
+    @media screen and (min-width: abstracts.$tablet) {
+    visibility: collapse;
+  }
   }
 
   #text-info {
