@@ -1,0 +1,45 @@
+@use '../abstracts';
+
+.animation-container {
+            z-index: 9999;
+            width: 100%;
+            height: 30px;
+            position: fixed;
+            top: 8%;
+        }
+
+        .sound-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .bar {
+            position: relative;
+            height: 100%;
+            width: 10px;
+            background: #540D6E;
+            display: inline-block;
+            flex-shrink: 0;
+            transform-origin: center;
+        }
+
+        @media screen and (min-width: abstracts.$tablet) {
+            .animation-container {
+                height: 40px;
+                top: 13%;
+            }
+            .sound-container {
+                gap: 3px;
+            }
+        }
+
+        @media screen and (min-width: abstracts.$desktop) {
+            .sound-container {
+                gap: 4px;
+            }
+        }
