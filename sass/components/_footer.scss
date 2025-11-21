@@ -6,19 +6,16 @@
     text-align: center;
     width: 100%;
     box-sizing: border-box;
+
+    p {
+        font-size: 0.875rem;
+        line-height: 1.4;
+        margin: 0;
+    }
+
 }
 
-.full {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
 
-.foot p {
-    font-size: 0.875rem;
-    line-height: 1.4;
-    margin: 0;
-}
 
 @media screen and (min-width: abstracts.$tablet) {
     .foot {
