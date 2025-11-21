@@ -8,13 +8,17 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     &::before {
         animation: pulse 8s ease-in-out infinite;
     }
 
         h2 {
-            font-size: 2.5em;
+            font-size: 1.5em;
             font-weight: 800;
             color: abstracts.$primary-color;
             letter-spacing: -0.02em;
@@ -41,7 +45,7 @@
             padding: 1rem 2.5rem;
             background: abstracts.$text-color;
             color: abstracts.$primary-color;
-            font-size: 1.1rem;
+            font-size: 0.8rem;
             font-weight: 600;
             text-decoration: none;
             border-radius: 50px;
@@ -136,7 +140,7 @@
 
             .cta-button {
                 padding: 0.875rem 2rem;
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
         }
 }
